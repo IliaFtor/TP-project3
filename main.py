@@ -7,15 +7,14 @@ import locale
 import requests
 import json
 
-os.system("chcp 65001")  # Сменить кодировку на UTF-8
-locale.setlocale(locale.LC_ALL, "")  # Установить локаль системы
+os.system("chcp 65001")  
+locale.setlocale(locale.LC_ALL, "")  
+with open("./config.json", "r", encoding="utf-8") as file:
+    parsed_data = json.load(file) 
 
-# Конфигурация
-BOT_TOKEN = "8066563757:AAG_gNuDJqamYU68dh9D2lVrKBrT9Uns6xg"
-bot = Bot(token=BOT_TOKEN)
+bot = Bot(token=parsed_data["Bot"]["BOT_TOKEN"])
 dp = Dispatcher(bot)
 
-# Команда: Выполнить системную команду
 @dp.message_handler(commands=['run'])
 async def execute_command(message: types.Message):
     command = message.get_args()
