@@ -1,0 +1,12 @@
+{
+    "Bot" : 
+    {
+    "BOT_TOKEN":"YOUR_TOKEN"
+    },
+
+    "User":
+    {
+        "idChat" : "chat",
+        "idSysetm" : "idSysetm"
+    }
+}
